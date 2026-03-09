@@ -2,40 +2,26 @@
 
 Chào bạn! 👋
 
-Đây là website tài liệu cá nhân của mình về cách **xây dựng Skill cho AI Assistant** — từ nền tảng đến thực chiến.
+Đây là tài liệu mở về cách **xây dựng Skill cho AI Assistant** — mình tổng hợp và viết lại theo cách dễ hiểu nhất có thể, hy vọng giúp được bạn trên hành trình làm việc với AI.
 
-> 🌐 **Xem trực tiếp:** [nmhieu301.github.io/nmh-ai-skill-docs](https://nmhieu301.github.io/nmh-ai-skill-docs/)
+> 🌐 **Xem trực tiếp tại:** [nmhieu301.github.io/nmh-ai-skill-docs](https://nmhieu301.github.io/nmh-ai-skill-docs/)
 
-## ✨ Website có gì?
+---
 
-- 📖 **6 chương hướng dẫn** — từ cơ bản đến nâng cao
-- 🗺️ **2 lộ trình học** — standalone skill & skill + tool/MCP
-- 📋 **Checklist, template, ví dụ** — sẵn sàng dùng ngay
-- 🌙 **Dark mode** — dễ nhìn khi dùng ban đêm
-- 📱 **Responsive** — xem tốt trên cả desktop và mobile
+## 🤝 Cùng đóng góp nhé!
 
-## 🛠️ Công nghệ
+Tài liệu này không hoàn hảo — và mình rất vui nếu bạn muốn góp sức làm nó tốt hơn! 🙌
 
-Đơn giản thôi — chỉ 3 file:
+Bạn có thể đóng góp bằng cách:
 
-| File | Vai trò |
-|------|---------|
-| `index.html` | Nội dung & cấu trúc |
-| `styles.css` | Giao diện & dark mode |
-| `script.js` | Tương tác & animation |
+- 🐛 **Báo lỗi** — thấy sai chính tả, link hỏng hay nội dung chưa rõ? Tạo [Issue](https://github.com/nmhieu301/nmh-ai-skill-docs/issues) nhé
+- ✏️ **Sửa nội dung** — fork repo, sửa và gửi Pull Request
+- 💡 **Đề xuất ý tưởng** — muốn thêm chương mới, ví dụ hay hơn? Mình rất sẵn lòng lắng nghe
+- ⭐ **Cho repo 1 star** — đơn giản nhưng là động lực lớn cho mình!
 
-Không framework, không build step — mở file HTML là chạy. 🚀
+Mọi đóng góp dù nhỏ đều rất có ý nghĩa. Cảm ơn bạn! 💛
 
-## 🚀 Chạy trên máy
-
-```bash
-# Clone về
-git clone https://github.com/nmhieu301/nmh-ai-skill-docs.git
-
-# Mở file index.html trong trình duyệt — xong!
-```
-
-Hoặc dùng Live Server nếu bạn có VS Code.
+---
 
 ## 📬 Liên hệ
 
