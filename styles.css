@@ -928,6 +928,11 @@ ol {
   white-space: pre-wrap;
 }
 
+/* Force each top-level span to be its own line */
+.code-block__body>span {
+  display: block;
+}
+
 .code-block__body .indent {
   padding-left: var(--space-6);
 }
