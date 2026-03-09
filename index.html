@@ -33,6 +33,7 @@
                 <a href="#chuong-2" class="header__nav-link">Thiết kế</a>
                 <a href="#chuong-3" class="header__nav-link">Đánh giá</a>
                 <a href="#phu-luc" class="header__nav-link">Phụ lục</a>
+                <a href="#skill-builder" class="header__nav-link">✍️ Viết Skill</a>
             </nav>
             <div class="header__actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi giao diện">🌙</button>
@@ -129,6 +130,7 @@
                     <a href="#chuong-6" class="sidebar__link">CH6. Kiểm thử & Phân phối</a>
                     <div class="sidebar__divider"></div>
                     <a href="#phu-luc" class="sidebar__link">Phụ lục</a>
+                    <a href="#skill-builder" class="sidebar__link">✍️ Viết Skill</a>
                 </div>
             </aside>
 
@@ -1020,6 +1022,43 @@ Bạn là chuyên gia tạo React component chuẩn production.
             </main>
         </div><!-- /main-layout -->
     </div><!-- /page-wrapper -->
+
+    <!-- ==================== SKILL BUILDER ==================== -->
+    <section class="section skill-builder-section" id="skill-builder">
+        <div class="skill-builder__container reveal">
+            <div class="section__badge">✍️ Skill Builder</div>
+            <h2 class="section__title">Viết Skill Ngay Tại Đây</h2>
+            <p class="section__subtitle">Soạn SKILL.md trực tiếp, kiểm tra format và tải về — không cần rời trang.</p>
+
+            <div class="skill-builder__toolbar">
+                <div class="skill-builder__templates">
+                    <button class="skill-builder__tpl-btn active" data-template="standalone">📄 Standalone</button>
+                    <button class="skill-builder__tpl-btn" data-template="workflow">⚡ Workflow</button>
+                    <button class="skill-builder__tpl-btn" data-template="blank">📝 Trống</button>
+                </div>
+                <div class="skill-builder__actions">
+                    <button class="btn btn--outline" id="skillCheck">🔍 Kiểm tra format</button>
+                    <button class="btn btn--outline" id="skillCopy">📋 Copy</button>
+                    <button class="btn btn--primary" id="skillDownload">💾 Tải SKILL.md</button>
+                </div>
+            </div>
+
+            <div class="skill-builder__layout">
+                <div class="skill-builder__editor-wrap">
+                    <div class="skill-builder__editor-header">SKILL.md</div>
+                    <textarea class="skill-builder__editor" id="skillEditor" spellcheck="false"
+                        placeholder="Viết nội dung SKILL.md của bạn ở đây..."></textarea>
+                </div>
+                <div class="skill-builder__panel">
+                    <div class="skill-builder__panel-header">📋 Kết quả kiểm tra</div>
+                    <div class="skill-builder__results" id="skillResults">
+                        <div class="skill-builder__placeholder">Nhấn <strong>🔍 Kiểm tra format</strong> để xem kết quả.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ==================== CTA SECTION ==================== -->
     <section class="cta-section" id="cta">
