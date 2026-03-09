@@ -426,16 +426,12 @@
                         <div class="code-block">
                             <div class="code-block__header"><span>📁 Cấu trúc thư mục skill</span></div>
                             <div class="code-block__body">
-                                <span class="code-folder-name">your-skill-name/</span>
-                                <span class="code-tree-line">├── </span><span class="code-file">SKILL.md</span> <span
-                                    class="code-desc"># File hướng dẫn chính (bắt buộc)</span>
-                                <span class="code-tree-line">├── </span><span class="code-folder-name">scripts/</span>
-                                <span class="code-desc"># Kịch bản hỗ trợ, helper</span>
-                                <span class="code-tree-line">├── </span><span
-                                    class="code-folder-name">references/</span> <span class="code-desc"># Tài liệu tham
-                                    chiếu bổ sung</span>
-                                <span class="code-tree-line">└── </span><span class="code-folder-name">assets/</span>
-                                <span class="code-desc"># Template, config, tài nguyên</span>
+                                <pre>
+your-skill-name/
+├── SKILL.md          # File hướng dẫn chính (bắt buộc)
+├── scripts/          # Kịch bản hỗ trợ, helper
+├── references/       # Tài liệu tham chiếu bổ sung
+└── assets/           # Template, config, tài nguyên</pre>
                             </div>
                         </div>
 
@@ -526,22 +522,19 @@
                         <div class="code-block">
                             <div class="code-block__header"><span>📋 Ví dụ mô tả use case</span></div>
                             <div class="code-block__body">
-                                <span class="code-key">Use case:</span> <span class="code-value">Tạo API endpoint
-                                    RESTful</span>
-                                <span class="code-key">Trigger:</span> <span class="code-value">User yêu cầu tạo
-                                    endpoint mới</span>
-                                <span class="code-key">Input:</span> <span class="code-value">Tên resource, các field,
-                                    quan hệ</span>
-                                <span class="code-key">Output:</span> <span class="code-value">File controller, service,
-                                    model, route</span>
+                                <pre>
+Use case:   Tạo API endpoint RESTful
+Trigger:    User yêu cầu tạo endpoint mới
+Input:      Tên resource, các field, quan hệ
+Output:     File controller, service, model, route
 
-                                <span class="code-key">Workflow:</span>
-                                <span class="code-comment">1. Phân tích yêu cầu → xác định entity</span>
-                                <span class="code-comment">2. Tạo model/schema</span>
-                                <span class="code-comment">3. Tạo service layer</span>
-                                <span class="code-comment">4. Tạo controller + route</span>
-                                <span class="code-comment">5. Viết validation & error handling</span>
-                                <span class="code-comment">6. Tạo test cơ bản</span>
+Workflow:
+  1. Phân tích yêu cầu → xác định entity
+  2. Tạo model/schema
+  3. Tạo service layer
+  4. Tạo controller + route
+  5. Viết validation &amp; error handling
+  6. Tạo test cơ bản</pre>
                             </div>
                         </div>
 
@@ -701,25 +694,18 @@
                         <div class="code-block">
                             <div class="code-block__header"><span>📁 Cấu trúc bắt buộc</span></div>
                             <div class="code-block__body">
-                                <span class="code-folder-name">your-skill-name/</span> <span class="code-desc">#
-                                    kebab-case, viết thường</span>
-                                <span class="code-tree-line">├── </span><span class="code-file">SKILL.md</span> <span
-                                    class="code-desc"># Bắt buộc — viết hoa đúng</span>
-                                <span class="code-tree-line">├── </span><span class="code-folder-name">scripts/</span>
-                                <span class="code-desc"># Tùy chọn</span>
-                                <span class="code-tree-line">│ ├── </span><span class="code-file">generate.sh</span>
-                                <span class="code-tree-line">│ └── </span><span class="code-file">validate.py</span>
-                                <span class="code-tree-line">├── </span><span
-                                    class="code-folder-name">references/</span> <span class="code-desc"># Tùy
-                                    chọn</span>
-                                <span class="code-tree-line">│ ├── </span><span class="code-file">api-spec.md</span>
-                                <span class="code-tree-line">│ └── </span><span
-                                    class="code-file">best-practices.md</span>
-                                <span class="code-tree-line">└── </span><span class="code-folder-name">assets/</span>
-                                <span class="code-desc"># Tùy chọn</span>
-                                <span class="code-tree-line"> ├── </span><span class="code-file">template.yaml</span>
-                                <span class="code-tree-line"> └── </span><span
-                                    class="code-file">example-output.md</span>
+                                <pre>
+your-skill-name/              # kebab-case, viết thường
+├── SKILL.md                  # Bắt buộc — viết hoa đúng
+├── scripts/                  # Tùy chọn
+│   ├── generate.sh
+│   └── validate.py
+├── references/               # Tùy chọn
+│   ├── api-spec.md
+│   └── best-practices.md
+└── assets/                   # Tùy chọn
+    ├── template.yaml
+    └── example-output.md</pre>
                             </div>
                         </div>
 
@@ -772,25 +758,25 @@
                         <div class="code-block">
                             <div class="code-block__header"><span>📋 Template — Standalone Skill</span></div>
                             <div class="code-block__body">
-                                <span class="code-comment">---</span>
-                                <span class="code-key">name:</span> <span class="code-value">ten-skill-cua-ban</span>
-                                <span class="code-key">description:</span> <span class="code-value">"Mô tả ngắn gọn
-                                    skill làm gì"</span>
-                                <span class="code-comment">---</span>
+                                <pre>
+---
+name: ten-skill-cua-ban
+description: "Mô tả ngắn gọn skill làm gì"
+---
 
-                                <span class="code-key"># Tên Skill</span>
-                                <span class="code-comment">Mô tả vai trò và mục đích của skill.</span>
+# Tên Skill
+Mô tả vai trò và mục đích của skill.
 
-                                <span class="code-key">## Khi nào kích hoạt</span>
-                                <span class="code-comment">Liệt kê các trigger cụ thể.</span>
+## Khi nào kích hoạt
+Liệt kê các trigger cụ thể.
 
-                                <span class="code-key">## Quy trình thực hiện</span>
-                                <span class="code-comment">1. Bước 1: ...</span>
-                                <span class="code-comment">2. Bước 2: ...</span>
-                                <span class="code-comment">3. Bước 3: ...</span>
+## Quy trình thực hiện
+1. Bước 1: ...
+2. Bước 2: ...
+3. Bước 3: ...
 
-                                <span class="code-key">## Ví dụ đầu ra</span>
-                                <span class="code-comment">Cung cấp mẫu output mong muốn.</span>
+## Ví dụ đầu ra
+Cung cấp mẫu output mong muốn.</pre>
                             </div>
                         </div>
 
@@ -962,18 +948,14 @@
                                         <div class="code-block">
                                             <div class="code-block__header"><span>YAML Frontmatter chuẩn</span></div>
                                             <div class="code-block__body">
-                                                <span class="code-comment">---</span>
-                                                <span class="code-key">name:</span> <span
-                                                    class="code-value">ten-skill-kebab-case</span>
-                                                <span class="code-key">description:</span> <span class="code-value">"Mô
-                                                    tả ngắn gọn, rõ ràng về skill"</span>
-                                                <span class="code-key">risk:</span> <span class="code-value">low |
-                                                    medium | high</span>
-                                                <span class="code-key">source:</span> <span class="code-value">community
-                                                    | internal | personal</span>
-                                                <span class="code-key">date_added:</span> <span
-                                                    class="code-value">"2026-03-09"</span>
-                                                <span class="code-comment">---</span>
+                                                <pre>
+---
+name: ten-skill-kebab-case
+description: "Mô tả ngắn gọn, rõ ràng về skill"
+risk: low | medium | high
+source: community | internal | personal
+date_added: "2026-03-09"
+---</pre>
                                             </div>
                                         </div>
                                         <p class="content-p"><strong>name:</strong> Tên duy nhất, dùng kebab-case, khớp
@@ -1000,44 +982,33 @@
                                             <div class="code-block__header"><span>SKILL.md —
                                                     react-component-generator</span></div>
                                             <div class="code-block__body">
-                                                <span class="code-comment">---</span>
-                                                <span class="code-key">name:</span> <span
-                                                    class="code-value">react-component-generator</span>
-                                                <span class="code-key">description:</span> <span class="code-value">"Tạo
-                                                    React component với TypeScript, styled-components và unit test theo
-                                                    convention chuẩn của team."</span>
-                                                <span class="code-key">risk:</span> <span class="code-value">low</span>
-                                                <span class="code-key">source:</span> <span
-                                                    class="code-value">internal</span>
-                                                <span class="code-key">date_added:</span> <span
-                                                    class="code-value">"2026-03-09"</span>
-                                                <span class="code-comment">---</span>
+                                                <pre>
+---
+name: react-component-generator
+description: "Tạo React component với TypeScript, styled-components và unit test theo convention chuẩn của team."
+risk: low
+source: internal
+date_added: "2026-03-09"
+---
 
-                                                <span class="code-key"># React Component Generator</span>
+# React Component Generator
+Bạn là chuyên gia tạo React component chuẩn production.
 
-                                                <span class="code-value">Bạn là chuyên gia tạo React component chuẩn
-                                                    production.</span>
+## Khi nào kích hoạt
+- User yêu cầu tạo component mới
+- User cần thêm UI element vào dự án React
 
-                                                <span class="code-key">## Khi nào kích hoạt</span>
-                                                <span class="code-comment">- User yêu cầu tạo component mới</span>
-                                                <span class="code-comment">- User cần thêm UI element vào dự án
-                                                    React</span>
+## Quy trình
+1. Xác nhận tên, props và mục đích component
+2. Tạo folder: src/components/ComponentName/
+3. Tạo file: index.tsx, styles.ts, types.ts
+4. Tạo file test: ComponentName.test.tsx
+5. Export từ barrel file
 
-                                                <span class="code-key">## Quy trình</span>
-                                                <span class="code-comment">1. Xác nhận tên, props và mục đích
-                                                    component</span>
-                                                <span class="code-comment">2. Tạo folder:
-                                                    src/components/ComponentName/</span>
-                                                <span class="code-comment">3. Tạo file: index.tsx, styles.ts,
-                                                    types.ts</span>
-                                                <span class="code-comment">4. Tạo file test:
-                                                    ComponentName.test.tsx</span>
-                                                <span class="code-comment">5. Export từ barrel file</span>
-
-                                                <span class="code-key">## Convention</span>
-                                                <span class="code-comment">- PascalCase cho component name</span>
-                                                <span class="code-comment">- Functional component + hooks</span>
-                                                <span class="code-comment">- Props interface riêng trong types.ts</span>
+## Convention
+- PascalCase cho component name
+- Functional component + hooks
+- Props interface riêng trong types.ts</pre>
                                             </div>
                                         </div>
                                     </div>

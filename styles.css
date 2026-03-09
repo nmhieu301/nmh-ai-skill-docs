@@ -985,18 +985,22 @@ ol {
 }
 
 .code-block__body {
-  padding: var(--space-4) var(--space-5);
+  padding: 0;
   overflow-x: auto;
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
-  line-height: 1.7;
   color: var(--text-primary);
-  white-space: pre-wrap;
 }
 
-/* Force each top-level span to be its own line */
-.code-block__body>span {
-  display: block;
+.code-block__body pre {
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.6;
+  white-space: pre;
+  color: inherit;
+  background: none;
 }
 
 .code-block__body .indent {
