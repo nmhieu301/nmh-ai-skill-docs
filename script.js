@@ -121,6 +121,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ---- Code Block Copy Buttons ----
+    document.querySelectorAll('.code-block').forEach(block => {
+        const header = block.querySelector('.code-block__header');
+        const body = block.querySelector('.code-block__body');
+        if (!header || !body) return;
+
+        const btn = document.createElement('button');
+        btn.className = 'code-copy-btn';
+        btn.textContent = '📋 Copy';
+        header.appendChild(btn);
+
+        btn.addEventListener('click', () => {
+            const text = body.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✅ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    });
+
     // Initial calls
     updateScrollProgress();
     updateActiveSection();
