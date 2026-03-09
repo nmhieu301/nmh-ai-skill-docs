@@ -174,7 +174,8 @@ img {
   display: block;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -578,25 +579,45 @@ ul, ol {
   border-radius: 50%;
 }
 
-.hero__code-dot--red { background: #ff5f57; }
-.hero__code-dot--yellow { background: #febc2e; }
-.hero__code-dot--green { background: #28c840; }
+.hero__code-dot--red {
+  background: #ff5f57;
+}
+
+.hero__code-dot--yellow {
+  background: #febc2e;
+}
+
+.hero__code-dot--green {
+  background: #28c840;
+}
 
 .hero__code-title {
   margin-left: var(--space-3);
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-size: var(--fs-xs);
 }
 
 .hero__code-body {
   line-height: 1.8;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.hero__code-body .code-key { color: var(--color-cyan-light); }
-.hero__code-body .code-value { color: var(--color-purple-light); }
-.hero__code-body .code-comment { color: rgba(255,255,255,0.3); font-style: italic; }
-.hero__code-body .code-folder { color: #fbbf24; }
+.hero__code-body .code-key {
+  color: var(--color-cyan-light);
+}
+
+.hero__code-body .code-value {
+  color: var(--color-purple-light);
+}
+
+.hero__code-body .code-comment {
+  color: rgba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+.hero__code-body .code-folder {
+  color: #fbbf24;
+}
 
 /* ============================================
    BUTTONS
@@ -904,6 +925,7 @@ ul, ol {
   font-size: var(--fs-sm);
   line-height: 1.7;
   color: var(--text-primary);
+  white-space: pre-wrap;
 }
 
 .code-block__body .indent {
@@ -1263,7 +1285,7 @@ code:not(.code-block__body code) {
 
 .cta-section__desc {
   font-size: var(--fs-lg);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.8;
   margin-bottom: var(--space-8);
 }
@@ -1455,7 +1477,9 @@ code:not(.code-block__body code) {
     font-size: var(--fs-2xl);
   }
 
-  .card-grid, .card-grid--3, .card-grid--2 {
+  .card-grid,
+  .card-grid--3,
+  .card-grid--2 {
     grid-template-columns: 1fr;
   }
 
@@ -1505,21 +1529,49 @@ code:not(.code-block__body code) {
 /* ============================================
    UTILITY CLASSES
    ============================================ */
-.text-cyan { color: var(--color-cyan); }
-.text-purple { color: var(--color-purple); }
+.text-cyan {
+  color: var(--color-cyan);
+}
+
+.text-purple {
+  color: var(--color-purple);
+}
+
 .text-gradient {
   background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.font-mono { font-family: var(--font-mono); }
-.mt-4 { margin-top: var(--space-4); }
-.mt-6 { margin-top: var(--space-6); }
-.mt-8 { margin-top: var(--space-8); }
-.mb-4 { margin-bottom: var(--space-4); }
-.mb-6 { margin-bottom: var(--space-6); }
-.mb-8 { margin-bottom: var(--space-8); }
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mt-6 {
+  margin-top: var(--space-6);
+}
+
+.mt-8 {
+  margin-top: var(--space-8);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.mb-6 {
+  margin-bottom: var(--space-6);
+}
+
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
