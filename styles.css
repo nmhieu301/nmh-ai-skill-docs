@@ -390,6 +390,47 @@ ol {
   padding: var(--space-6) var(--space-4) var(--space-6) var(--space-6);
   overflow-y: auto;
   border-right: 1px solid var(--border-color);
+  transition: width var(--transition-base), padding var(--transition-base);
+}
+
+.sidebar__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-tertiary);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  margin-bottom: var(--space-4);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.sidebar__toggle:hover {
+  color: var(--color-cyan);
+  border-color: var(--color-cyan);
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.sidebar__content {
+  transition: opacity var(--transition-fast);
+}
+
+/* Collapsed state */
+.sidebar.collapsed {
+  width: 44px;
+  padding: var(--space-6) var(--space-2);
+}
+
+.sidebar.collapsed .sidebar__content {
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  height: 0;
 }
 
 .sidebar::-webkit-scrollbar {

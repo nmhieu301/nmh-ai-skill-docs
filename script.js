@@ -95,6 +95,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ---- Sidebar Toggle ----
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+    const savedSidebar = localStorage.getItem('nmh-sidebar');
+    if (savedSidebar === 'collapsed') {
+        sidebar.classList.add('collapsed');
+        sidebarToggle.textContent = '»';
+        sidebarToggle.title = 'Hiện mục lục';
+    }
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+        const isCollapsed = sidebar.classList.contains('collapsed');
+        sidebarToggle.textContent = isCollapsed ? '»' : '«';
+        sidebarToggle.title = isCollapsed ? 'Hiện mục lục' : 'Ẩn mục lục';
+        localStorage.setItem('nmh-sidebar', isCollapsed ? 'collapsed' : 'expanded');
+    });
+
     // ---- Throttled Scroll Handler ----
     let ticking = false;
     window.addEventListener('scroll', () => {
