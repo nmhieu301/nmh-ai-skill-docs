@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMH — Hướng Dẫn Toàn Diện Xây Dựng Skill Cho AI Assistant</title>
+    <meta name="description"
+        content="Tài liệu cá nhân hóa giúp bạn xây dựng skill, workflow và bộ hướng dẫn thông minh cho AI Assistant một cách bài bản, dễ triển khai và dễ mở rộng.">
+    <meta property="og:title" content="NMH — Hướng Dẫn Xây Dựng Skill Cho AI Assistant">
+    <meta property="og:description"
+        content="Tài liệu cá nhân hóa giúp bạn xây dựng skill, workflow và bộ hướng dẫn thông minh cho AI Assistant.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <a href="#" class="header__brand">
+                <div class="header__logo">NMH</div>
+                <div class="header__title">NMH <span>Docs</span></div>
+            </a>
+            <nav class="header__nav" id="headerNav">
+                <a href="#gioi-thieu" class="header__nav-link">Giới thiệu</a>
+                <a href="#hoc-gi" class="header__nav-link">Học gì</a>
+                <a href="#lo-trinh" class="header__nav-link">Lộ trình</a>
+                <a href="#chuong-1" class="header__nav-link">Nền tảng</a>
+                <a href="#chuong-2" class="header__nav-link">Thiết kế</a>
+                <a href="#chuong-3" class="header__nav-link">Đánh giá</a>
+                <a href="#phu-luc" class="header__nav-link">Phụ lục</a>
+            </nav>
+            <div class="header__actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi giao diện">🌙</button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#gioi-thieu" class="mobile-nav__link">Giới thiệu</a>
+        <a href="#hoc-gi" class="mobile-nav__link">Bạn sẽ học được gì</a>
+        <a href="#doi-tuong" class="mobile-nav__link">Đối tượng phù hợp</a>
+        <a href="#lo-trinh" class="mobile-nav__link">Lộ trình học</a>
+        <a href="#chuong-1" class="mobile-nav__link">Chương 1 — Nền tảng</a>
+        <a href="#chuong-2" class="mobile-nav__link">Chương 2 — Thiết kế</a>
+        <a href="#chuong-3" class="mobile-nav__link">Chương 3 — Đánh giá</a>
+        <a href="#chuong-4" class="mobile-nav__link">Chương 4 — Kỹ thuật</a>
+        <a href="#chuong-5" class="mobile-nav__link">Chương 5 — Patterns</a>
+        <a href="#chuong-6" class="mobile-nav__link">Chương 6 — Kiểm thử</a>
+        <a href="#phu-luc" class="mobile-nav__link">Phụ lục</a>
+    </nav>
+
+    <div class="page-wrapper">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" id="hero">
+            <div class="hero__inner">
+                <div class="hero__text">
+                    <div class="hero__badge">Tài liệu cá nhân hóa bởi NMH</div>
+                    <h1 class="hero__heading">Hướng Dẫn Toàn Diện<br><span class="highlight">Xây Dựng
+                            Skill</span><br>Cho AI Assistant</h1>
+                    <p class="hero__description">Tài liệu cá nhân hóa giúp bạn xây dựng skill, workflow và bộ hướng dẫn
+                        thông minh cho AI Assistant một cách bài bản, dễ triển khai và dễ mở rộng.</p>
+                    <div class="hero__cta">
+                        <a href="#gioi-thieu" class="btn btn--primary btn--lg">🚀 Bắt đầu học</a>
+                        <a href="#phu-luc" class="btn btn--secondary btn--lg">📂 Xem cấu trúc skill mẫu</a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__code-preview">
+                        <div class="hero__code-header">
+                            <span class="hero__code-dot hero__code-dot--red"></span>
+                            <span class="hero__code-dot hero__code-dot--yellow"></span>
+                            <span class="hero__code-dot hero__code-dot--green"></span>
+                            <span class="hero__code-title">my-first-skill/</span>
+                        </div>
+                        <div class="hero__code-body">
+                            <div><span class="code-folder">📁 my-first-skill/</span></div>
+                            <div class="indent"><span class="code-key">├── </span><span
+                                    class="code-value">SKILL.md</span> <span class="code-comment"># Hướng dẫn
+                                    chính</span></div>
+                            <div class="indent"><span class="code-key">├── </span><span
+                                    class="code-folder">scripts/</span> <span class="code-comment"># Kịch bản hỗ
+                                    trợ</span></div>
+                            <div class="indent"><span class="code-key">│ └── </span><span
+                                    class="code-value">deploy.sh</span></div>
+                            <div class="indent"><span class="code-key">├── </span><span
+                                    class="code-folder">references/</span> <span class="code-comment"># Tài liệu tham
+                                    chiếu</span></div>
+                            <div class="indent"><span class="code-key">│ └── </span><span
+                                    class="code-value">api-docs.md</span></div>
+                            <div class="indent"><span class="code-key">└── </span><span
+                                    class="code-folder">assets/</span> <span class="code-comment"># Tài nguyên bổ
+                                    sung</span></div>
+                            <div class="indent"><span class="code-key"> └── </span><span
+                                    class="code-value">template.yaml</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN LAYOUT -->
+        <div class="main-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar__title">Mục lục</div>
+                <a href="#gioi-thieu" class="sidebar__link">Giới thiệu</a>
+                <a href="#hoc-gi" class="sidebar__link">Bạn sẽ học được gì</a>
+                <a href="#doi-tuong" class="sidebar__link">Đối tượng phù hợp</a>
+                <a href="#lo-trinh" class="sidebar__link">Lộ trình học</a>
+                <div class="sidebar__divider"></div>
+                <a href="#chuong-1" class="sidebar__link">CH1. Nền tảng cơ bản</a>
+                <a href="#chuong-2" class="sidebar__link">CH2. Lập kế hoạch & Thiết kế</a>
+                <a href="#chuong-3" class="sidebar__link">CH3. Tiêu chí & Đánh giá</a>
+                <a href="#chuong-4" class="sidebar__link">CH4. Yêu cầu kỹ thuật</a>
+                <a href="#chuong-5" class="sidebar__link">CH5. Patterns thực chiến</a>
+                <a href="#chuong-6" class="sidebar__link">CH6. Kiểm thử & Phân phối</a>
+                <div class="sidebar__divider"></div>
+                <a href="#phu-luc" class="sidebar__link">Phụ lục</a>
+            </aside>
+
+            <!-- CONTENT -->
+            <main class="main-content">
+
+                <!-- ==================== GIỚI THIỆU ==================== -->
+                <section class="section" id="gioi-thieu">
+                    <div class="section__container reveal">
+                        <div class="section__badge">📖 Giới thiệu</div>
+                        <h2 class="section__title">Skill là gì và vì sao bạn cần nó?</h2>
+                        <p class="section__subtitle">Hiểu rõ khái niệm skill — công cụ giúp AI Assistant hoạt động nhất
+                            quán, thông minh hơn và giảm thiểu thao tác lặp lại của bạn.</p>
+
+                        <p class="content-p">Trong bối cảnh AI Assistant ngày càng phổ biến, một trong những thách thức
+                            lớn nhất là làm sao để trợ lý ảo hiểu đúng ý bạn mà không cần giải thích lại mỗi lần.
+                            <strong>Skill</strong> chính là giải pháp: đó là một bộ hướng dẫn được đóng gói cẩn thận,
+                            chứa đầy đủ thông tin về quy trình, ngữ cảnh và ràng buộc để AI có thể thực thi một nhiệm vụ
+                            cụ thể một cách chính xác, nhất quán.
+                        </p>
+
+                        <p class="content-p">Hãy hình dung skill giống như một cuốn sổ tay tác nghiệp — nhưng dành cho
+                            AI. Thay vì bạn phải viết prompt dài dòng mỗi lần cần AI làm một việc gì đó, skill cho phép
+                            bạn chuẩn hóa kiến thức chuyên môn thành tài liệu có cấu trúc, để AI tự biết cách thực hiện
+                            đúng khi gặp tình huống phù hợp.</p>
+
+                        <h3 class="content-h3">Khi nào nên dùng skill?</h3>
+                        <ul class="content-ul">
+                            <li>Bạn thường xuyên viết prompt tương tự cho cùng một loại tác vụ</li>
+                            <li>Bạn muốn AI tuân thủ quy trình cố định mà không cần nhắc nhở</li>
+                            <li>Team của bạn cần chuẩn hóa cách AI xử lý công việc nội bộ</li>
+                            <li>Bạn muốn chia sẻ kiến thức chuyên gia cho người khác dưới dạng có thể tái sử dụng</li>
+                        </ul>
+
+                        <h3 class="content-h3">Lợi ích khi sử dụng skill</h3>
+                        <div class="card-grid">
+                            <div class="card">
+                                <div class="card__icon">⚡</div>
+                                <div class="card__title">Tiết kiệm thời gian</div>
+                                <div class="card__desc">Không cần viết prompt lặp lại. Skill tự kích hoạt khi AI nhận
+                                    diện đúng ngữ cảnh.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon">🎯</div>
+                                <div class="card__title">Kết quả nhất quán</div>
+                                <div class="card__desc">Mỗi lần thực thi đều tuân theo cùng quy trình, giảm sai sót và
+                                    thiếu nhất quán.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon">🔄</div>
+                                <div class="card__title">Dễ chia sẻ & tái sử dụng</div>
+                                <div class="card__desc">Skill là tài sản kiến thức — bạn có thể chia sẻ cho team hoặc
+                                    cộng đồng.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon card__icon--purple">🧩</div>
+                                <div class="card__title">Linh hoạt mở rộng</div>
+                                <div class="card__desc">Kết hợp nhiều skill hoặc tích hợp với tool, connector, MCP để
+                                    tạo workflow mạnh mẽ hơn.</div>
+                            </div>
+                        </div>
+
+                        <div class="blockquote">
+                            "Skill là cách bạn đóng gói hướng dẫn, workflow và kiến thức chuyên môn để AI sử dụng đúng
+                            lúc, đúng cách — không cần bạn lặp lại."
+                            <cite>— Triết lý thiết kế skill</cite>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== BẠN SẼ HỌC ĐƯỢC GÌ ==================== -->
+                <section class="section section--alt" id="hoc-gi">
+                    <div class="section__container reveal">
+                        <div class="section__badge">🎓 Nội dung</div>
+                        <h2 class="section__title">Bạn sẽ học được gì?</h2>
+                        <p class="section__subtitle">Từ lý thuyết nền tảng đến kỹ năng thực chiến — tất cả trong một lộ
+                            trình rõ ràng.</p>
+
+                        <div class="card-grid card-grid--3">
+                            <div class="card">
+                                <div class="card__number">01</div>
+                                <div class="card__title">Hiểu cấu trúc kỹ thuật của skill</div>
+                                <div class="card__desc">Nắm rõ từng thành phần: SKILL.md, scripts, references, assets và
+                                    cách chúng phối hợp.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__number">02</div>
+                                <div class="card__title">Lên kế hoạch use case</div>
+                                <div class="card__desc">Xác định đầu vào, đầu ra, trigger và ràng buộc trước khi bắt tay
+                                    viết skill.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__number">03</div>
+                                <div class="card__title">Thiết kế workflow & trigger</div>
+                                <div class="card__desc">Mô tả quy trình nhiều bước và điều kiện kích hoạt chính xác cho
+                                    AI.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__number">04</div>
+                                <div class="card__title">Kiểm thử & cải tiến</div>
+                                <div class="card__desc">Tạo bộ test, quan sát lỗi, tối ưu từ ngữ và logic đến khi chuẩn.
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__number">05</div>
+                                <div class="card__title">Kết hợp tool & connector</div>
+                                <div class="card__desc">Tích hợp skill với MCP server, API hoặc tool bên ngoài để mở
+                                    rộng năng lực.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__number">06</div>
+                                <div class="card__title">Tạo skill đầu tiên nhanh chóng</div>
+                                <div class="card__desc">Thực hành ngay với template và checklist có sẵn — sẵn sàng dùng
+                                    trong vài phút.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== ĐỐI TƯỢNG ==================== -->
+                <section class="section" id="doi-tuong">
+                    <div class="section__container reveal">
+                        <div class="section__badge">👥 Đối tượng</div>
+                        <h2 class="section__title">Ai nên đọc tài liệu này?</h2>
+                        <p class="section__subtitle">Dù bạn là developer, power user hay PM — skill sẽ giúp bạn làm việc
+                            hiệu quả hơn với AI.</p>
+
+                        <div class="card-grid card-grid--2">
+                            <div class="card">
+                                <div class="card__icon">💻</div>
+                                <div class="card__title">Developer</div>
+                                <div class="card__desc">Muốn tự động hóa workflow phát triển, tạo boilerplate, viết
+                                    test, review code hoặc tích hợp CI/CD qua AI Assistant.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon">⚡</div>
+                                <div class="card__title">Power User</div>
+                                <div class="card__desc">Người dùng AI thường xuyên, muốn đóng gói kinh nghiệm cá nhân
+                                    thành skill tái sử dụng thay vì viết prompt mỗi lần.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon card__icon--purple">📋</div>
+                                <div class="card__title">Product / BA / PM</div>
+                                <div class="card__desc">Cần chuẩn hóa quy trình tạo tài liệu, phân tích yêu cầu hoặc
+                                    viết user story bằng AI một cách nhất quán.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon card__icon--purple">🏢</div>
+                                <div class="card__title">Team nội bộ</div>
+                                <div class="card__desc">Muốn chuẩn hóa AI workflow trong tổ chức, đảm bảo mọi thành viên
+                                    đều sử dụng AI theo cùng tiêu chuẩn.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== LỘ TRÌNH ==================== -->
+                <section class="section section--alt" id="lo-trinh">
+                    <div class="section__container reveal">
+                        <div class="section__badge">🗺️ Lộ trình</div>
+                        <h2 class="section__title">Lộ trình học tập</h2>
+                        <p class="section__subtitle">Chọn hướng phù hợp với mục tiêu của bạn — từ đơn giản đến nâng cao.
+                        </p>
+
+                        <div class="paths-grid">
+                            <!-- Lộ trình A -->
+                            <div class="path-card">
+                                <div class="path-card__header">
+                                    <div class="path-card__label">Lộ trình A</div>
+                                    <div class="path-card__title">Standalone Skill</div>
+                                </div>
+                                <div class="path-card__body">
+                                    <div class="stepper">
+                                        <div class="stepper__item">
+                                            <div class="stepper__line">
+                                                <div class="stepper__dot">1</div>
+                                                <div class="stepper__connector"></div>
+                                            </div>
+                                            <div class="stepper__content">
+                                                <div class="stepper__title">Hiểu nền tảng</div>
+                                                <div class="stepper__desc">Học cấu trúc SKILL.md, frontmatter và cách AI
+                                                    đọc skill</div>
+                                            </div>
+                                        </div>
+                                        <div class="stepper__item">
+                                            <div class="stepper__line">
+                                                <div class="stepper__dot">2</div>
+                                                <div class="stepper__connector"></div>
+                                            </div>
+                                            <div class="stepper__content">
+                                                <div class="stepper__title">Xác định use case</div>
+                                                <div class="stepper__desc">Chọn tác vụ cụ thể, mô tả đầu vào/đầu ra
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="stepper__item">
+                                            <div class="stepper__line">
+                                                <div class="stepper__dot">3</div>
+                                                <div class="stepper__connector"></div>
+                                            </div>
+                                            <div class="stepper__content">
+                                                <div class="stepper__title">Viết skill đầu tiên</div>
+                                                <div class="stepper__desc">Sử dụng template, viết hướng dẫn rõ ràng
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="stepper__item">
+                                            <div class="stepper__line">
+                                                <div class="stepper__dot">4</div>
+                                            </div>
+                                            <div class="stepper__content">
+                                                <div class="stepper__title">Test & cải tiến</div>
+                                                <div class="stepper__desc">Chạy thử, sửa lỗi, tối ưu wording</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Lộ trình B -->
+                            <div class="path-card">
+                                <div class="path-card__header path-card__header--b">
+                                    <div class="path-card__label" style="color:var(--color-purple)">Lộ trình B</div>
+                                    <div class="path-card__title">Skill + Tool / MCP</div>
+                                </div>
+                                <div class="path-card__body">
+                                    <div class="stepper">
+                                        <div class="stepper__item">
+                                            <div class="stepper__line">
+                                                <div class="stepper__dot">1</div>
+                                                <div class="stepper__connector"></div>
+                                            </div>
+                                            <div class="stepper__content">
+                                                <div class="stepper__title">Hoàn thành Lộ trình A</div>
+                                                <div class="stepper__desc">Nắm vững cách tạo standalone skill trước
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="stepper__item">
+                                            <div class="stepper__line">
+                                                <div class="stepper__dot">2</div>
+                                                <div class="stepper__connector"></div>
+                                            </div>
+                                            <div class="stepper__content">
+                                                <div class="stepper__title">Hiểu connector & MCP</div>
+                                                <div class="stepper__desc">Tìm hiểu cách skill gọi tool và service bên
+                                                    ngoài</div>
+                                            </div>
+                                        </div>
+                                        <div class="stepper__item">
+                                            <div class="stepper__line">
+                                                <div class="stepper__dot">3</div>
+                                                <div class="stepper__connector"></div>
+                                            </div>
+                                            <div class="stepper__content">
+                                                <div class="stepper__title">Thiết kế workflow phức hợp</div>
+                                                <div class="stepper__desc">Kết hợp nhiều bước, nhiều tool trong 1 skill
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="stepper__item">
+                                            <div class="stepper__line">
+                                                <div class="stepper__dot">4</div>
+                                            </div>
+                                            <div class="stepper__content">
+                                                <div class="stepper__title">Phân phối & bảo trì</div>
+                                                <div class="stepper__desc">Chia sẻ skill cho team, viết tài liệu đi kèm
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== CHƯƠNG 1 ==================== -->
+                <section class="section" id="chuong-1">
+                    <div class="section__container reveal">
+                        <div class="section__badge">📘 Chương 1</div>
+                        <h2 class="section__title">Nền Tảng Cơ Bản</h2>
+                        <p class="section__subtitle">Hiểu rõ bản chất của skill, các thành phần cốt lõi và nguyên tắc
+                            thiết kế nền tảng.</p>
+
+                        <h3 class="content-h3">Skill trong AI Assistant là gì?</h3>
+                        <p class="content-p">Skill là một đơn vị kiến thức được đóng gói theo cấu trúc chuẩn, chứa đầy
+                            đủ hướng dẫn để AI Assistant thực hiện một tác vụ hoặc nhóm tác vụ liên quan. Mỗi skill hoạt
+                            động như một "module chuyên gia" — khi được kích hoạt, AI sẽ tuân theo quy trình đã định
+                            nghĩa thay vì phải suy luận từ đầu.</p>
+                        <p class="content-p">Khác với prompt đơn lẻ, skill có tính <strong>bền vững</strong> (dùng lại
+                            nhiều lần), <strong>cấu trúc rõ ràng</strong> (file, thư mục, metadata) và <strong>khả năng
+                                mở rộng</strong> (kết hợp với tool, API, MCP).</p>
+
+                        <h3 class="content-h3">Thành phần cốt lõi của một skill</h3>
+                        <div class="code-block">
+                            <div class="code-block__header"><span>📁 Cấu trúc thư mục skill</span></div>
+                            <div class="code-block__body">
+                                <span class="code-folder-name">your-skill-name/</span>
+                                <span class="code-tree-line">├── </span><span class="code-file">SKILL.md</span> <span
+                                    class="code-desc"># File hướng dẫn chính (bắt buộc)</span>
+                                <span class="code-tree-line">├── </span><span class="code-folder-name">scripts/</span>
+                                <span class="code-desc"># Kịch bản hỗ trợ, helper</span>
+                                <span class="code-tree-line">├── </span><span
+                                    class="code-folder-name">references/</span> <span class="code-desc"># Tài liệu tham
+                                    chiếu bổ sung</span>
+                                <span class="code-tree-line">└── </span><span class="code-folder-name">assets/</span>
+                                <span class="code-desc"># Template, config, tài nguyên</span>
+                            </div>
+                        </div>
+
+                        <h4 class="content-h4">SKILL.md — Trái tim của mỗi skill</h4>
+                        <p class="content-p">File <code>SKILL.md</code> chứa toàn bộ hướng dẫn mà AI cần để thực hiện
+                            tác vụ. File này gồm 2 phần chính: <strong>frontmatter</strong> (metadata YAML) và
+                            <strong>nội dung markdown</strong> (hướng dẫn chi tiết). AI sẽ đọc frontmatter trước để
+                            quyết định có nên kích hoạt skill hay không, sau đó mới đọc nội dung chi tiết.
+                        </p>
+
+                        <h4 class="content-h4">scripts/ — Kịch bản hỗ trợ</h4>
+                        <p class="content-p">Thư mục này chứa các script mà skill có thể gọi trong quá trình thực thi,
+                            ví dụ: script deploy, script validation, script generate code.</p>
+
+                        <h4 class="content-h4">references/ — Tài liệu mở rộng</h4>
+                        <p class="content-p">Khi hướng dẫn quá dài hoặc cần tham chiếu chuyên sâu, bạn tách ra file
+                            riêng và đặt trong thư mục này. AI sẽ đọc khi cần chi tiết hơn.</p>
+
+                        <h3 class="content-h3">Nguyên tắc Progressive Disclosure</h3>
+                        <p class="content-p">Skill được thiết kế theo nguyên tắc "tiết lộ dần" — AI chỉ đọc những gì cần
+                            thiết ở mỗi thời điểm, tránh quá tải:</p>
+
+                        <div class="card-grid card-grid--3">
+                            <div class="card">
+                                <div class="card__icon">🏷️</div>
+                                <div class="card__title">Tầng 1: Frontmatter</div>
+                                <div class="card__desc">AI đọc metadata (tên, mô tả) để quyết định có kích hoạt skill
+                                    hay không. Nhẹ và nhanh.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon">📄</div>
+                                <div class="card__title">Tầng 2: Nội dung chính</div>
+                                <div class="card__desc">Khi skill được kích hoạt, AI đọc toàn bộ hướng dẫn trong
+                                    SKILL.md để thực thi.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon card__icon--purple">📚</div>
+                                <div class="card__title">Tầng 3: File tham chiếu</div>
+                                <div class="card__desc">Chỉ khi cần chi tiết chuyên sâu, AI mới đọc thêm các file trong
+                                    references/ hoặc scripts/.</div>
+                            </div>
+                        </div>
+
+                        <h3 class="content-h3">Composability — Khả năng ghép nối</h3>
+                        <p class="content-p">Một skill tốt có thể kết hợp với skill khác hoặc với công cụ bên ngoài. Ví
+                            dụ: skill "tạo component React" có thể gọi skill "viết unit test" và kết nối với MCP server
+                            để đẩy code lên repository. Thiết kế skill theo hướng module nhỏ, rõ ràng sẽ giúp bạn tái sử
+                            dụng linh hoạt.</p>
+
+                        <h3 class="content-h3">Portability — Tính di động</h3>
+                        <p class="content-p">Skill được viết dưới dạng file markdown và thư mục đơn giản — không phụ
+                            thuộc platform cụ thể. Bạn có thể chuyển skill giữa các dự án, share qua Git, hoặc đóng gói
+                            để cộng đồng sử dụng.</p>
+
+                        <div class="callout">
+                            <div class="callout__title">💡 Ghi nhớ nhanh</div>
+                            <div class="callout__body">Skill = SKILL.md + scripts + references + assets. AI đọc theo 3
+                                tầng (frontmatter → nội dung → tham chiếu). Thiết kế skill nhỏ, rõ ràng, dễ ghép nối và
+                                không phụ thuộc platform.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== CHƯƠNG 2 ==================== -->
+                <section class="section section--alt" id="chuong-2">
+                    <div class="section__container reveal">
+                        <div class="section__badge">📐 Chương 2</div>
+                        <h2 class="section__title">Lập Kế Hoạch & Thiết Kế</h2>
+                        <p class="section__subtitle">Mọi skill hiệu quả đều bắt đầu từ một use case rõ ràng và quy trình
+                            được mô tả cẩn thận.</p>
+
+                        <h3 class="content-h3">Bắt đầu từ use case</h3>
+                        <p class="content-p">Đừng vội viết skill. Hãy bắt đầu bằng câu hỏi: <strong>"Tác vụ cụ thể nào
+                                tôi muốn AI thực hiện?"</strong>. Mô tả rõ tình huống người dùng gặp phải, hành động
+                            mong muốn và kết quả cuối cùng. Use case càng cụ thể, skill càng chính xác.</p>
+
+                        <h4 class="content-h4">Xác định trigger</h4>
+                        <p class="content-p">Trigger là điều kiện để AI nhận biết "đã đến lúc dùng skill này". Trigger
+                            có thể dựa trên: từ khóa trong câu hỏi của user, loại file đang mở, ngữ cảnh dự án, hoặc
+                            lệnh trực tiếp từ user.</p>
+
+                        <h4 class="content-h4">Mô tả workflow nhiều bước</h4>
+                        <p class="content-p">Phần lớn skill thực tế đòi hỏi AI thực hiện nhiều bước tuần tự. Hãy mô tả
+                            từng bước rõ ràng: bước nào làm trước, đầu ra của bước này là đầu vào bước tiếp theo, điều
+                            kiện dừng hoặc xử lý lỗi.</p>
+
+                        <h3 class="content-h3">Ví dụ minh họa: Skill tạo API endpoint</h3>
+                        <div class="code-block">
+                            <div class="code-block__header"><span>📋 Ví dụ mô tả use case</span></div>
+                            <div class="code-block__body">
+                                <span class="code-key">Use case:</span> <span class="code-value">Tạo API endpoint
+                                    RESTful</span>
+                                <span class="code-key">Trigger:</span> <span class="code-value">User yêu cầu tạo
+                                    endpoint mới</span>
+                                <span class="code-key">Input:</span> <span class="code-value">Tên resource, các field,
+                                    quan hệ</span>
+                                <span class="code-key">Output:</span> <span class="code-value">File controller, service,
+                                    model, route</span>
+
+                                <span class="code-key">Workflow:</span>
+                                <span class="code-comment">1. Phân tích yêu cầu → xác định entity</span>
+                                <span class="code-comment">2. Tạo model/schema</span>
+                                <span class="code-comment">3. Tạo service layer</span>
+                                <span class="code-comment">4. Tạo controller + route</span>
+                                <span class="code-comment">5. Viết validation & error handling</span>
+                                <span class="code-comment">6. Tạo test cơ bản</span>
+                            </div>
+                        </div>
+
+                        <h3 class="content-h3">Ba nhóm use case phổ biến</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Nhóm</th>
+                                    <th>Mô tả</th>
+                                    <th>Ví dụ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tạo tài liệu/asset</strong></td>
+                                    <td>Skill sinh ra file, code, document theo template</td>
+                                    <td>Tạo component, viết docs, generate config</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tự động hóa workflow</strong></td>
+                                    <td>Skill thực hiện quy trình nhiều bước tự động</td>
+                                    <td>CI/CD pipeline, review code, deploy</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tích hợp tool/MCP</strong></td>
+                                    <td>Skill gọi tool bên ngoài để lấy hoặc đẩy dữ liệu</td>
+                                    <td>Query database, push Jira ticket, gọi API</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3 class="content-h3">Checklist: Trước khi viết skill</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>Đã xác định rõ use case cụ thể
+                            </div>
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>Đã mô tả trigger kích hoạt
+                            </div>
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>Đã xác định input / output rõ ràng
+                            </div>
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>Đã phác thảo workflow từng bước
+                            </div>
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>Đã xác định tool/constraint cần thiết
+                            </div>
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>Đã xem xét edge case và error handling
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== CHƯƠNG 3 ==================== -->
+                <section class="section" id="chuong-3">
+                    <div class="section__container reveal">
+                        <div class="section__badge">📊 Chương 3</div>
+                        <h2 class="section__title">Tiêu Chí Thành Công & Cách Đánh Giá</h2>
+                        <p class="section__subtitle">Đo lường hiệu quả skill bằng cả chỉ số định lượng lẫn định tính —
+                            không chỉ "chạy được" mà phải "chạy tốt".</p>
+
+                        <h3 class="content-h3">Metric định lượng</h3>
+                        <div class="card-grid card-grid--2">
+                            <div class="card">
+                                <div class="card__icon">⏱️</div>
+                                <div class="card__title">Thời gian hoàn thành</div>
+                                <div class="card__desc">So sánh thời gian AI hoàn thành tác vụ có skill vs. không có
+                                    skill. Mục tiêu: giảm ≥50%.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon">🎯</div>
+                                <div class="card__title">Tỷ lệ chính xác</div>
+                                <div class="card__desc">Phần trăm output đúng theo yêu cầu ngay lần đầu, không cần sửa
+                                    hoặc retry.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon">🔄</div>
+                                <div class="card__title">Số lần retry</div>
+                                <div class="card__desc">Skill tốt giúp giảm số lần user phải yêu cầu lại hoặc chỉnh sửa
+                                    output.</div>
+                            </div>
+                            <div class="card">
+                                <div class="card__icon card__icon--purple">📏</div>
+                                <div class="card__title">Độ nhất quán</div>
+                                <div class="card__desc">Chạy cùng input nhiều lần — output có giống nhau về cấu trúc và
+                                    chất lượng không?</div>
+                            </div>
+                        </div>
+
+                        <h3 class="content-h3">Metric định tính</h3>
+                        <ul class="content-ul">
+                            <li><strong>Dễ hiểu:</strong> Người mới có thể đọc skill và hiểu workflow trong 5 phút
+                                không?</li>
+                            <li><strong>Dễ sửa:</strong> Khi cần thay đổi logic, có thể chỉnh sửa nhanh mà không phá vỡ
+                                cấu trúc?</li>
+                            <li><strong>Dễ mở rộng:</strong> Có thể thêm bước mới hoặc tích hợp tool mà không cần viết
+                                lại từ đầu?</li>
+                        </ul>
+
+                        <h3 class="content-h3">So sánh: Có skill vs. Không có skill</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Tiêu chí</th>
+                                    <th>Không có Skill</th>
+                                    <th>Có Skill</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Thời gian prompt</td>
+                                    <td>Viết lại mỗi lần, 3-5 phút</td>
+                                    <td>Tự kích hoạt, &lt;10 giây</td>
+                                </tr>
+                                <tr>
+                                    <td>Nhất quán output</td>
+                                    <td>Thay đổi theo cách viết prompt</td>
+                                    <td>Chuẩn hóa theo workflow</td>
+                                </tr>
+                                <tr>
+                                    <td>Chia sẻ kiến thức</td>
+                                    <td>Khó — phụ thuộc cá nhân</td>
+                                    <td>Dễ — share skill file</td>
+                                </tr>
+                                <tr>
+                                    <td>Bảo trì</td>
+                                    <td>Sửa prompt rải rác</td>
+                                    <td>Sửa 1 file, áp dụng toàn bộ</td>
+                                </tr>
+                                <tr>
+                                    <td>Khả năng mở rộng</td>
+                                    <td>Hạn chế</td>
+                                    <td>Kết hợp tool, MCP, skill khác</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="callout--tip callout">
+                            <div class="callout__title">💡 Mẹo đánh giá</div>
+                            <div class="callout__body">Tạo một bộ 5-10 câu test query đa dạng. Chạy skill với từng query
+                                và chấm điểm output theo thang 1-5. Skill đạt yêu cầu khi trung bình ≥ 4/5.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== CHƯƠNG 4 ==================== -->
+                <section class="section section--alt" id="chuong-4">
+                    <div class="section__container reveal">
+                        <div class="section__badge">⚙️ Chương 4</div>
+                        <h2 class="section__title">Yêu Cầu Kỹ Thuật & Cấu Trúc Thư Mục</h2>
+                        <p class="section__subtitle">Tuân thủ quy tắc đặt tên và cấu trúc chuẩn để skill hoạt động ổn
+                            định trên mọi môi trường.</p>
+
+                        <h3 class="content-h3">Cấu trúc thư mục chuẩn</h3>
+                        <div class="code-block">
+                            <div class="code-block__header"><span>📁 Cấu trúc bắt buộc</span></div>
+                            <div class="code-block__body">
+                                <span class="code-folder-name">your-skill-name/</span> <span class="code-desc">#
+                                    kebab-case, viết thường</span>
+                                <span class="code-tree-line">├── </span><span class="code-file">SKILL.md</span> <span
+                                    class="code-desc"># Bắt buộc — viết hoa đúng</span>
+                                <span class="code-tree-line">├── </span><span class="code-folder-name">scripts/</span>
+                                <span class="code-desc"># Tùy chọn</span>
+                                <span class="code-tree-line">│ ├── </span><span class="code-file">generate.sh</span>
+                                <span class="code-tree-line">│ └── </span><span class="code-file">validate.py</span>
+                                <span class="code-tree-line">├── </span><span
+                                    class="code-folder-name">references/</span> <span class="code-desc"># Tùy
+                                    chọn</span>
+                                <span class="code-tree-line">│ ├── </span><span class="code-file">api-spec.md</span>
+                                <span class="code-tree-line">│ └── </span><span
+                                    class="code-file">best-practices.md</span>
+                                <span class="code-tree-line">└── </span><span class="code-folder-name">assets/</span>
+                                <span class="code-desc"># Tùy chọn</span>
+                                <span class="code-tree-line"> ├── </span><span class="code-file">template.yaml</span>
+                                <span class="code-tree-line"> └── </span><span
+                                    class="code-file">example-output.md</span>
+                            </div>
+                        </div>
+
+                        <h3 class="content-h3">Quy tắc đặt tên</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>File chính <strong>phải</strong> đặt tên là
+                                <code>SKILL.md</code> (viết hoa, không đổi tên)
+                            </div>
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>Tên thư mục dùng <code>kebab-case</code> (VD:
+                                <code>api-generator</code>, <code>code-reviewer</code>)
+                            </div>
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div><strong>Không</strong> dùng <code>README.md</code>
+                                thay cho <code>SKILL.md</code> trong thư mục skill
+                            </div>
+                            <div class="checklist__item">
+                                <div class="checklist__icon">✓</div>Script và reference file cũng dùng kebab-case
+                            </div>
+                        </div>
+
+                        <h3 class="content-h3">Lỗi phổ biến cần tránh</h3>
+                        <div class="callout callout--note">
+                            <div class="callout__title">⚠️ Cảnh báo</div>
+                            <div class="callout__body">
+                                <strong>1. Đặt tên file sai:</strong> Viết <code>skill.md</code> hoặc
+                                <code>Skill.md</code> — AI sẽ không nhận diện được.<br>
+                                <strong>2. Thiếu frontmatter:</strong> Không có metadata YAML → AI không biết khi nào
+                                nên kích hoạt skill.<br>
+                                <strong>3. Nội dung quá dài:</strong> Nhồi mọi thứ vào 1 file → AI bị quá tải. Hãy tách
+                                ra references/.<br>
+                                <strong>4. Không có ví dụ:</strong> Hướng dẫn thiếu ví dụ cụ thể → AI hiểu sai ý định.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== CHƯƠNG 5 ==================== -->
+                <section class="section" id="chuong-5">
+                    <div class="section__container reveal">
+                        <div class="section__badge">🔧 Chương 5</div>
+                        <h2 class="section__title">Patterns Thực Chiến</h2>
+                        <p class="section__subtitle">Các mẫu thiết kế đã được kiểm chứng — áp dụng ngay cho skill của
+                            bạn.</p>
+
+                        <h3 class="content-h3">Pattern 1: Standalone Skill</h3>
+                        <p class="content-p">Dành cho tác vụ đơn lẻ, không cần gọi tool bên ngoài. Ví dụ: tạo component,
+                            viết documentation, review code theo convention.</p>
+                        <div class="code-block">
+                            <div class="code-block__header"><span>📋 Template — Standalone Skill</span></div>
+                            <div class="code-block__body">
+                                <span class="code-comment">---</span>
+                                <span class="code-key">name:</span> <span class="code-value">ten-skill-cua-ban</span>
+                                <span class="code-key">description:</span> <span class="code-value">"Mô tả ngắn gọn
+                                    skill làm gì"</span>
+                                <span class="code-comment">---</span>
+
+                                <span class="code-key"># Tên Skill</span>
+                                <span class="code-comment">Mô tả vai trò và mục đích của skill.</span>
+
+                                <span class="code-key">## Khi nào kích hoạt</span>
+                                <span class="code-comment">Liệt kê các trigger cụ thể.</span>
+
+                                <span class="code-key">## Quy trình thực hiện</span>
+                                <span class="code-comment">1. Bước 1: ...</span>
+                                <span class="code-comment">2. Bước 2: ...</span>
+                                <span class="code-comment">3. Bước 3: ...</span>
+
+                                <span class="code-key">## Ví dụ đầu ra</span>
+                                <span class="code-comment">Cung cấp mẫu output mong muốn.</span>
+                            </div>
+                        </div>
+
+                        <h3 class="content-h3">Pattern 2: Workflow Automation</h3>
+                        <p class="content-p">Dành cho quy trình nhiều bước tuần tự. Mỗi bước có input/output rõ ràng, có
+                            điều kiện kiểm tra và xử lý lỗi.</p>
+
+                        <h3 class="content-h3">Pattern 3: Skill + Tool/MCP</h3>
+                        <p class="content-p">Dành cho skill cần tương tác với hệ thống bên ngoài (database, API, CI/CD).
+                            Skill mô tả workflow, tool cung cấp khả năng thực thi.</p>
+
+                        <h3 class="content-h3">Best practices</h3>
+                        <ul class="content-ul">
+                            <li>Luôn bắt đầu bằng mô tả rõ trigger — khi nào AI nên dùng skill này</li>
+                            <li>Từng bước trong workflow phải có <strong>hành động cụ thể</strong>, không mô tả mơ hồ
+                            </li>
+                            <li>Thêm phần validation sau mỗi bước quan trọng</li>
+                            <li>Định nghĩa fallback rõ ràng: nếu step X thất bại thì làm gì?</li>
+                            <li>Giữ skill nhỏ gọn, tập trung 1 mục đích — dễ tái sử dụng hơn skill "làm mọi thứ"</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- ==================== CHƯƠNG 6 ==================== -->
+                <section class="section section--alt" id="chuong-6">
+                    <div class="section__container reveal">
+                        <div class="section__badge">🧪 Chương 6</div>
+                        <h2 class="section__title">Kiểm Thử, Cải Tiến & Phân Phối</h2>
+                        <p class="section__subtitle">Từ bản nháp đến sản phẩm hoàn chỉnh — quy trình biến skill thô
+                            thành skill chất lượng cao.</p>
+
+                        <h3 class="content-h3">Quy trình từ Draft đến Publish</h3>
+                        <div class="stepper">
+                            <div class="stepper__item">
+                                <div class="stepper__line">
+                                    <div class="stepper__dot">1</div>
+                                    <div class="stepper__connector"></div>
+                                </div>
+                                <div class="stepper__content">
+                                    <div class="stepper__title">Draft</div>
+                                    <div class="stepper__desc">Viết bản nháp đầu tiên dựa trên use case và template.
+                                        Chưa cần hoàn hảo.</div>
+                                </div>
+                            </div>
+                            <div class="stepper__item">
+                                <div class="stepper__line">
+                                    <div class="stepper__dot">2</div>
+                                    <div class="stepper__connector"></div>
+                                </div>
+                                <div class="stepper__content">
+                                    <div class="stepper__title">Test</div>
+                                    <div class="stepper__desc">Tạo 5-10 câu test query đa dạng. Chạy skill và đánh giá
+                                        output theo các tiêu chí.</div>
+                                </div>
+                            </div>
+                            <div class="stepper__item">
+                                <div class="stepper__line">
+                                    <div class="stepper__dot">3</div>
+                                    <div class="stepper__connector"></div>
+                                </div>
+                                <div class="stepper__content">
+                                    <div class="stepper__title">Refine</div>
+                                    <div class="stepper__desc">Sửa wording, thêm ví dụ, bổ sung edge case dựa trên kết
+                                        quả test.</div>
+                                </div>
+                            </div>
+                            <div class="stepper__item">
+                                <div class="stepper__line">
+                                    <div class="stepper__dot">4</div>
+                                    <div class="stepper__connector"></div>
+                                </div>
+                                <div class="stepper__content">
+                                    <div class="stepper__title">Review</div>
+                                    <div class="stepper__desc">Nhờ đồng nghiệp hoặc AI khác review skill. Thu thập phản
+                                        hồi.</div>
+                                </div>
+                            </div>
+                            <div class="stepper__item">
+                                <div class="stepper__line">
+                                    <div class="stepper__dot">5</div>
+                                </div>
+                                <div class="stepper__content">
+                                    <div class="stepper__title">Publish</div>
+                                    <div class="stepper__desc">Đóng gói skill hoàn chỉnh, viết changelog và chia sẻ cho
+                                        team/cộng đồng.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="content-h3">Cách tạo bộ test query</h3>
+                        <p class="content-p">Bộ test nên bao gồm: trường hợp điển hình (happy path), trường hợp biên
+                            (edge case), input sai định dạng, và yêu cầu mơ hồ. Mục tiêu: skill phải xử lý đúng ≥80%
+                            test query.</p>
+
+                        <h3 class="content-h3">Cách chia sẻ skill</h3>
+                        <ul class="content-ul">
+                            <li><strong>Nội bộ team:</strong> Đặt skill vào folder chung hoặc Git repository của team
+                            </li>
+                            <li><strong>Cộng đồng:</strong> Đóng gói theo chuẩn, thêm README, ví dụ và LICENSE rồi
+                                publish lên GitHub</li>
+                            <li><strong>Tài liệu đi kèm:</strong> Mỗi skill chia sẻ nên có: mô tả use case, hướng dẫn
+                                cài đặt, ví dụ sử dụng, và changelog</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- ==================== PHỤ LỤC ==================== -->
+                <section class="section" id="phu-luc">
+                    <div class="section__container reveal">
+                        <div class="section__badge">📎 Phụ lục</div>
+                        <h2 class="section__title">Tài Liệu Tham Khảo</h2>
+                        <p class="section__subtitle">Checklist, template và ví dụ sẵn sàng để bạn bắt đầu ngay.</p>
+
+                        <div class="accordion">
+                            <!-- Phụ lục A -->
+                            <div class="accordion__item open">
+                                <button class="accordion__trigger">
+                                    <span>📋 Phụ lục A — Checklist nhanh tạo skill</span>
+                                    <span class="accordion__icon">+</span>
+                                </button>
+                                <div class="accordion__content">
+                                    <div class="accordion__body">
+                                        <div class="checklist">
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Xác định use case cụ thể, mô tả được
+                                                trong 1-2 câu
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Mô tả trigger rõ ràng (khi nào skill
+                                                kích hoạt?)
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Liệt kê input và output mong muốn
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Viết workflow step-by-step
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Tạo thư mục theo chuẩn kebab-case
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Viết SKILL.md với frontmatter đầy đủ
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Thêm ít nhất 1 ví dụ output mẫu
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Tạo 5 test query và chạy thử
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Refine wording dựa trên kết quả test
+                                            </div>
+                                            <div class="checklist__item">
+                                                <div class="checklist__icon">✓</div>Review lần cuối trước khi publish
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Phụ lục B -->
+                            <div class="accordion__item">
+                                <button class="accordion__trigger">
+                                    <span>🏷️ Phụ lục B — Mẫu YAML Frontmatter</span>
+                                    <span class="accordion__icon">+</span>
+                                </button>
+                                <div class="accordion__content">
+                                    <div class="accordion__body">
+                                        <div class="code-block">
+                                            <div class="code-block__header"><span>YAML Frontmatter chuẩn</span></div>
+                                            <div class="code-block__body">
+                                                <span class="code-comment">---</span>
+                                                <span class="code-key">name:</span> <span
+                                                    class="code-value">ten-skill-kebab-case</span>
+                                                <span class="code-key">description:</span> <span class="code-value">"Mô
+                                                    tả ngắn gọn, rõ ràng về skill"</span>
+                                                <span class="code-key">risk:</span> <span class="code-value">low |
+                                                    medium | high</span>
+                                                <span class="code-key">source:</span> <span class="code-value">community
+                                                    | internal | personal</span>
+                                                <span class="code-key">date_added:</span> <span
+                                                    class="code-value">"2026-03-09"</span>
+                                                <span class="code-comment">---</span>
+                                            </div>
+                                        </div>
+                                        <p class="content-p"><strong>name:</strong> Tên duy nhất, dùng kebab-case, khớp
+                                            với tên thư mục.<br>
+                                            <strong>description:</strong> Mô tả 1-2 câu để AI quyết định có kích hoạt
+                                            skill không.<br>
+                                            <strong>risk:</strong> Mức độ rủi ro khi skill tự động thực thi
+                                            (low/medium/high).<br>
+                                            <strong>source:</strong> Nguồn gốc (cá nhân, team hay cộng đồng).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Phụ lục C -->
+                            <div class="accordion__item">
+                                <button class="accordion__trigger">
+                                    <span>📦 Phụ lục C — Ví dụ Skill hoàn chỉnh</span>
+                                    <span class="accordion__icon">+</span>
+                                </button>
+                                <div class="accordion__content">
+                                    <div class="accordion__body">
+                                        <div class="code-block">
+                                            <div class="code-block__header"><span>SKILL.md —
+                                                    react-component-generator</span></div>
+                                            <div class="code-block__body">
+                                                <span class="code-comment">---</span>
+                                                <span class="code-key">name:</span> <span
+                                                    class="code-value">react-component-generator</span>
+                                                <span class="code-key">description:</span> <span class="code-value">"Tạo
+                                                    React component với TypeScript, styled-components và unit test theo
+                                                    convention chuẩn của team."</span>
+                                                <span class="code-key">risk:</span> <span class="code-value">low</span>
+                                                <span class="code-key">source:</span> <span
+                                                    class="code-value">internal</span>
+                                                <span class="code-key">date_added:</span> <span
+                                                    class="code-value">"2026-03-09"</span>
+                                                <span class="code-comment">---</span>
+
+                                                <span class="code-key"># React Component Generator</span>
+
+                                                <span class="code-value">Bạn là chuyên gia tạo React component chuẩn
+                                                    production.</span>
+
+                                                <span class="code-key">## Khi nào kích hoạt</span>
+                                                <span class="code-comment">- User yêu cầu tạo component mới</span>
+                                                <span class="code-comment">- User cần thêm UI element vào dự án
+                                                    React</span>
+
+                                                <span class="code-key">## Quy trình</span>
+                                                <span class="code-comment">1. Xác nhận tên, props và mục đích
+                                                    component</span>
+                                                <span class="code-comment">2. Tạo folder:
+                                                    src/components/ComponentName/</span>
+                                                <span class="code-comment">3. Tạo file: index.tsx, styles.ts,
+                                                    types.ts</span>
+                                                <span class="code-comment">4. Tạo file test:
+                                                    ComponentName.test.tsx</span>
+                                                <span class="code-comment">5. Export từ barrel file</span>
+
+                                                <span class="code-key">## Convention</span>
+                                                <span class="code-comment">- PascalCase cho component name</span>
+                                                <span class="code-comment">- Functional component + hooks</span>
+                                                <span class="code-comment">- Props interface riêng trong types.ts</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div><!-- /main-layout -->
+    </div><!-- /page-wrapper -->
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta-section" id="cta">
+        <div class="cta-section__inner">
+            <h2 class="cta-section__title">Sẵn sàng xây skill đầu tiên của bạn?</h2>
+            <p class="cta-section__desc">Bắt đầu từ use case đơn giản, đóng gói thành workflow rõ ràng và cải tiến dần
+                theo thực tế sử dụng.</p>
+            <div class="cta-section__buttons">
+                <a href="#chuong-1" class="btn btn--primary btn--lg">🚀 Tạo skill ngay</a>
+                <a href="#phu-luc" class="btn btn--secondary btn--lg">📦 Xem ví dụ mẫu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <div class="footer__brand-title">NMH Docs</div>
+                <p class="footer__brand-desc">Tài liệu cá nhân hóa về AI Assistant, skill development và workflow
+                    automation — được xây dựng bởi NMH.</p>
+                <div class="footer__social">
+                    <a href="https://zalo.me/0987686315" class="footer__social-link" title="Zalo" target="_blank"
+                        rel="noopener">💬</a>
+                    <a href="https://github.com" class="footer__social-link" title="GitHub" target="_blank"
+                        rel="noopener">⌨</a>
+                    <a href="mailto:nmh.hieu3001@gmail.com" class="footer__social-link" title="Email">✉</a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <div class="footer__heading">Nội dung</div>
+                <a href="#gioi-thieu" class="footer__link">Giới thiệu</a>
+                <a href="#chuong-1" class="footer__link">Nền tảng cơ bản</a>
+                <a href="#chuong-2" class="footer__link">Lập kế hoạch</a>
+                <a href="#chuong-5" class="footer__link">Patterns</a>
+                <a href="#phu-luc" class="footer__link">Phụ lục</a>
+            </div>
+            <div class="footer__col">
+                <div class="footer__heading">Liên hệ</div>
+                <a href="mailto:nmh.hieu3001@gmail.com" class="footer__link">📧 nmh.hieu3001@gmail.com</a>
+                <a href="https://zalo.me/0987686315" class="footer__link" target="_blank" rel="noopener">💬 Zalo:
+                    0987686315</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>© 2026 NMH. Tất cả quyền được bảo lưu.</span>
+            <span>Xây dựng với ❤️ bởi NMH</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
